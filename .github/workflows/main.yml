@@ -1,20 +1,22 @@
 name: C++ Fibonacci Test
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main ]  # Cambia 'main' si tu rama principal tiene otro nombre
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y g++
+    - name: Install g++
+      run: sudo apt-get install g++
 
     - name: Compile the program
-      run: g++ test_fibonacci.cpp -o test_fibonacci
+      run: g++ tests/test_fibonacci.cpp src/fibonacci.cpp -o test_fibonacci
 
-    - name: Run tests
+    - name: Run the test
       run: ./test_fibonacci
