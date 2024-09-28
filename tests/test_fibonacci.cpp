@@ -1,6 +1,6 @@
 // test_fibonacci.cpp
 #include <cassert>
-#include "fibonacci.cpp"
+#include "../src/fibonacci.cpp"
 
 int main() {
     assert(fibonacci(0) == 0);
