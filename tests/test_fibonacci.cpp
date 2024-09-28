@@ -1,6 +1,5 @@
-// test_fibonacci.cpp
+#include "../src/fibonacci.h"  // Solo incluye el encabezado
 #include <cassert>
-#include "../src/fibonacci.cpp"
 
 int main() {
     assert(fibonacci(0) == 0);
